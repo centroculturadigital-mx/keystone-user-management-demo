@@ -1,5 +1,6 @@
 var uuid = require("uuid");
 
+const { sendMail } = require('../mailer')
 
 const afterUserChange = async ({
   operation,
@@ -9,10 +10,7 @@ const afterUserChange = async ({
 }) => {
   if (operation == 'create') {
 
-    console.log('updatedItem', updatedItem)
-
-    const userId = updatedItem.id || 'idddd'
-
+    const userId = updatedItem.id
     const token = uuid.v4();
     const tokenExpiration =
       parseInt(process.env.RESET_PASSWORD_TOKEN_EXPIRY) || 1000 * 60 * 60 * 24;
@@ -21,10 +19,11 @@ const afterUserChange = async ({
     const expiresAt = new Date(now + tokenExpiration).toISOString();
 
 
-    const res = await context.executeGraphQL({
+    const {data, errors} = await context.executeGraphQL({
       query: `mutation createValidationToken($data: UserValidationTokenCreateInput) {
         createUserValidationToken(data: $data) {
           id
+          token
         }
       }`,
       variables: { 
@@ -38,7 +37,21 @@ const afterUserChange = async ({
       context: context.createContext({ skipAccessControl: true })
     })
 
-    console.log(res)
+    if (data) {
+      const subject = 'Validate your accout'
+      const text = `
+        Your user validation token: ${data.createUserValidationToken.token}
+      `
+      console.log('email', updatedItem.email)
+      console.log('subject', subject)
+      console.log('text', text)
+      console.log('token', data.createUserValidationToken.token)
+      sendMail({
+        emailTo: updatedItem.email,
+        subject,
+        text
+      })
+    }
   }
 }
 

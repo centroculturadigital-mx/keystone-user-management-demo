@@ -1,4 +1,4 @@
-var uuid = require("uuid");
+const uuid = require("uuid");
 
 const startPasswordRecovery = {
   schema: 'startPasswordRecovery(email: String!): ForgottenPasswordToken',
@@ -42,7 +42,7 @@ const startPasswordRecovery = {
       expiresAt,
     };
 
-    const { errors } = await context.executeGraphQL({
+    const { errors, data } = await context.executeGraphQL({
       context: context.createContext({ skipAccessControl: true }),
       query: `
         mutation createForgottenPasswordToken(
@@ -61,6 +61,7 @@ const startPasswordRecovery = {
             token
             user {
               id
+              email
             }
             requestedAt
             expiresAt
