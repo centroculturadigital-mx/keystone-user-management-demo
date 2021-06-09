@@ -3628,15 +3628,7 @@ clsx@^1.0.1:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
   integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
-codemirror-graphql@^0.6.11:
-  version "0.6.12"
-  resolved "https://registry.yarnpkg.com/codemirror-graphql/-/codemirror-graphql-0.6.12.tgz#91a273fe5188857524a30221d06e645b4ca41f00"
-  integrity sha512-7YP956JubbWkmk9QqKy62CZgdGbEulHNJkz2/aUDTpsE1KrQtRrT9WzStJaxAOEX2k4wUOpojUX2ItPxa69kFA==
-  dependencies:
-    graphql-language-service-interface "^1.0.16"
-    graphql-language-service-parser "^0.1.14"
-
-codemirror-graphql@timsuchanek/codemirror-graphql#details-fix:
+codemirror-graphql@^0.6.11, codemirror-graphql@timsuchanek/codemirror-graphql#details-fix:
   version "0.6.12"
   resolved "https://codeload.github.com/timsuchanek/codemirror-graphql/tar.gz/801ec32683c38d6dc0f8f7bc19014a111edc9ebd"
   dependencies:
@@ -5141,7 +5133,7 @@ graphql-import@^0.4.4:
   dependencies:
     lodash "^4.17.4"
 
-graphql-language-service-interface@^1.0.16, graphql-language-service-interface@^1.0.18:
+graphql-language-service-interface@^1.0.18:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/graphql-language-service-interface/-/graphql-language-service-interface-1.3.2.tgz#4bd5d49e23766c3d2ab65d110f26f10e321cc000"
   integrity sha512-sOxFV5sBSnYtKIFHtlmAHHVdhok7CRbvCPLcuHvL4Q1RSgKRsPpeHUDKU+yCbmlonOKn/RWEKaYWrUY0Sgv70A==
@@ -5151,22 +5143,10 @@ graphql-language-service-interface@^1.0.16, graphql-language-service-interface@^
     graphql-language-service-types "^1.2.2"
     graphql-language-service-utils "^1.2.2"
 
-graphql-language-service-parser@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/graphql-language-service-parser/-/graphql-language-service-parser-0.1.14.tgz#dd25abda5dcff4f2268c9a19e026004271491661"
-  integrity sha512-72M4OksONeqT5slfdfODmlPBFlUQQkcnRhjgmPt9H2n8/DUcf4XzDkGXudBWpzNfjVU35+IADYW6x13wKw/fOg==
-  dependencies:
-    graphql-language-service-types "^0.1.14"
-
 graphql-language-service-parser@^1.0.18, graphql-language-service-parser@^1.2.2:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/graphql-language-service-parser/-/graphql-language-service-parser-1.6.0.tgz#53a97619461ed41ae237b9070e7e20cfaca56118"
   integrity sha512-tkfYXl6WBECWNcsyw7O09c0oCMrxqr3JGyDNvdISDSDhvk8EwEk+AOweBEJkycJwoiv1lVlM+EdLfj7dzw4/6w==
-
-graphql-language-service-types@^0.1.14:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/graphql-language-service-types/-/graphql-language-service-types-0.1.14.tgz#e6112785fc23ea8222f59a7f00e61b359f263c88"
-  integrity sha512-77KP83gvK0gWswvGY/+jx/GpsOfKuwWQ1AYnyPT2GDGG3//1QxQTObaZMAEevNTxJtO8T26YXxoUlqkvET7iEg==
 
 graphql-language-service-types@^1.2.2:
   version "1.6.0"
@@ -6728,6 +6708,11 @@ node-releases@^1.1.58:
   version "1.1.58"
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.58.tgz#8ee20eef30fa60e52755fcc0942def5a734fe935"
   integrity sha512-NxBudgVKiRh/2aPWMgPR7bPTX0VPmGx5QBwCtdHitnqFE5/O8DeBXuIMH1nwNnw/aMo6AjOrpsHzfY3UbUJ7yg==
+
+nodemailer@^6.4.10:
+  version "6.6.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.6.1.tgz#2a05fbf205b897d71bf43884167b5d4d3bd01b99"
+  integrity sha512-1xzFN3gqv+/qJ6YRyxBxfTYstLNt0FCtZaFRvf4Sg9wxNGWbwFmGXVpfSi6ThGK6aRxAo+KjHtYSW8NvCsNSAg==
 
 normalize-package-data@^2.5.0:
   version "2.5.0"
@@ -9063,9 +9048,9 @@ toidentifier@1.0.0:
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
 trim-newlines@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.0.tgz#79726304a6a898aa8373427298d54c2ee8b1cb30"
-  integrity sha512-C4+gOpvmxaSMKuEf9Qc134F1ZuOHVXKRbtEflf4NTtuuJDEIJ9p5PXsalL8SkeRw+qit1Mo+yuvMPAKwWg/1hA==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/trim-newlines/-/trim-newlines-3.0.1.tgz#260a5d962d8b752425b32f3a7db0dcacd176c144"
+  integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
 tryer@^1.0.1:
   version "1.0.1"
